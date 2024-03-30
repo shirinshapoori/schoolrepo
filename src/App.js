@@ -20,7 +20,7 @@ import CountBoxPage from './pages/CountBoxPage'
 
 const CardList = () => {
   const [rows, setRows] = useState([1]); // Initial row
-
+// dfddgdrgg
   const handleAddRow = () => {
     setRows((prevRows) => [...prevRows, prevRows.length + 1]);
   };
