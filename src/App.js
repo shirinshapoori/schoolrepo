@@ -18,7 +18,6 @@ import CountBoxPage from './pages/CountBoxPage'
 
 // export default App
 
-
 const CardList = () => {
   const [rows, setRows] = useState([1]); // Initial row
 
@@ -27,7 +26,7 @@ const CardList = () => {
   };
 
   const handleRemoveRow = (rowIndex) => {
-    setRows((prevRows) => prevRows.filter((_, index) => index !== rowIndex));
+    setRows((prevRows) => prevRows.filter((_ , index) => index !== rowIndex));
   };
 
   return (
