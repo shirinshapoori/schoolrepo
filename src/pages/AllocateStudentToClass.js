@@ -5,7 +5,7 @@ import { GetPhotos } from "../api/BookRequest";
 import CountBoxPage from "./CountBoxPage";
 
 const AllocateStudentToClass = () => {
-  const items = [{name:"پایه هفتم" ,img:"./book.png"},
+  const items = [{name:"پایه هفتم" , img:"./book.png"},
   {name:"پایه هشتم" ,img:"./book.png"},
   {name:"پایه نهم" ,img:"./book.png"}];
 

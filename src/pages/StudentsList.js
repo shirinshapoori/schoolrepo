@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
 import StudentCard from '../components/StudentCard';
 import StudentCardBack from '../components/StudentCardBack';
+import SearchBar from '../components/SearchBar';
 
 const StudentsList = () => {
     const [isFlipped,setIsFlipped] = useState(false);
@@ -10,16 +11,21 @@ const StudentsList = () => {
         setIsFlipped(!isFlipped);
     }
   return (<>
-    <ReactCardFlip flipDirection='horizontal' isFlipped={isFlipped}>
-    
-    <div onClick={handleFlip}>
-    {isFlipped ? <StudentCard /> : <StudentCardBack />}
+  <SearchBar />
+   <div className='alphabet'>
+      الف
+    </div>
+    <ReactCardFlip flipDirection='horizontal' isFlipped={isFlipped} flipSpeedBackToFront={0.8} flipSpeedFrontToBack={0.8}>
+       <div onClick={handleFlip}>
+    <StudentCard /> 
       </div>
-
-    {/* <div onClick={handleFlip}>
-      <StudentCard />
-    </div> */}
+      <div onClick={handleFlip}>
+    <StudentCardBack /> 
+      </div>
     </ReactCardFlip>
+      {/* <div onClick={handleFlip}>
+    {isFlipped ? <StudentCard /> : <StudentCardBack />}
+      </div> */}
   </>)
 }
 

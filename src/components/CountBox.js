@@ -1,4 +1,5 @@
 import React from "react";
+import { toPersianDigit } from "../components/toPersianDigit";
 
 function CountBox({ onAdd, num, onDlt }) {
   return (
@@ -21,7 +22,7 @@ function CountBox({ onAdd, num, onDlt }) {
             />
           </svg>
         </div>
-        <p style={{ margin: "0%" }}>{`${num} کلاس`}</p>
+        <p style={{ margin: "0%" }}>{`${toPersianDigit(num)} کلاس`}</p>
         <div className="count-item" onClick={onDlt}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
