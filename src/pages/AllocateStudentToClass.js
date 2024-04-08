@@ -3,6 +3,7 @@ import Item from "../components/Item";
 import ClassSetting from "../components/ClassSetting";
 import { GetPhotos } from "../api/BookRequest";
 import CountBoxPage from "./CountBoxPage";
+import CountBox from "../components/CountBox";
 
 const AllocateStudentToClass = () => {
   const items = [{name:"پایه هفتم" , img:"./book.png"},
@@ -18,6 +19,7 @@ const AllocateStudentToClass = () => {
       </div>
       <CountBoxPage />
       <ClassSetting />
+     
     </>
   );
 };
