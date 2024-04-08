@@ -24,8 +24,8 @@ const ClassCostomizePattern = () => {
   return (
     <div>
         <p>{title}</p>
-        {items.map((item)=> 
-             <CountBox name={name} onAdd={handleAdd} onDlt={handleDec} num={percent} items={item}/>
+        {items.map((item , index)=> 
+             <CountBox name={name} onAdd={handleAdd} onDlt={handleDec} num={percent} items={item} id={index}/>
        )}
           
     </div>
