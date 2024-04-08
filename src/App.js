@@ -24,8 +24,8 @@ function App() {
   
   return (<>
       <Navbar /> 
-      {/* <AllocateStudentToClass /> */}
       <ClassCostomizePattern />
+      {/* <AllocateStudentToClass /> */}
       {/* <StudentCard /> */}
       {/* <StudentsList /> */}
       {/* <SearchBar /> */}

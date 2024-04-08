@@ -1,12 +1,13 @@
 import React from "react";
 import { toPersianDigit } from "../components/toPersianDigit";
 
-function CountBox({ onAdd, num, onDlt, name,title, items}) {
+function CountBox({ onAdd, num, onDlt, name, items}) {
   return (
     <>
-    <p>{title}</p>
+    
       <div className="count">
-      <p style={{ margin: "0%", fontSize: "20px",  width:"40%" }}>{items}</p>
+        
+         <p style={{ margin: "0%", fontSize: "20px",  width:"40%" }}>{items.sport}</p>
         <div className="count-item-long" onClick={onAdd}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -3,7 +3,7 @@ import CountBox from './CountBox'
 import { toPersianDigit } from './toPersianDigit';
 
 const ClassCostomizePattern = () => {
-    const items = [{name:"معدل"},
+    const items = [{score:"معدل"},
     {discipline: "انضباط:"}, 
     {scientific:"نشان علمی (دارای رتبه برتر):"},
     {sport:"فعالیت ورزشی:"},
@@ -23,9 +23,10 @@ const ClassCostomizePattern = () => {
    }
   return (
     <div>
+        <p>{title}</p>
         {items.map((item)=> 
-             <CountBox name={name} title={title} onAdd={handleAdd} onDlt={handleDec} num={percent} items={item}/>
-       )};
+             <CountBox name={name} onAdd={handleAdd} onDlt={handleDec} num={percent} items={item}/>
+       )}
           
     </div>
   )
