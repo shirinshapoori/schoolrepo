@@ -1,31 +1,29 @@
 import React, { useState } from 'react'
 import CountBox from './CountBox'
 import { toPersianDigit } from './toPersianDigit';
+import { type } from '@testing-library/user-event/dist/type';
 
 const ClassCostomizePattern = () => {
-    const items = [{score:"معدل"},
-    {discipline: "انضباط:"}, 
-    {scientific:"نشان علمی (دارای رتبه برتر):"},
-    {sport:"فعالیت ورزشی:"},
-    {lessons: "نمرات دروس تخصصی:"},
-    {culture:"فعالیت فرهنگی:"},
- ];
-   const title= "کلاس‌بندی سفارشی";
-   const name="%";
-   const [percent, setPercent] = useState(0);
-   
-   function handleAdd() {
-      setPercent((num)=> num + 5);
+  //arraye az dictionary ha ya object ha
+    const [items, setItems] = useState(
+  [ {name:"معدل:" , type:"score" , percent: 0},
+    {name: "انضباط:" , type:"discipline" , percent: 0}, 
+    {name:"نشان علمی (دارای رتبه برتر):" , type:"scientific" , percent: 0},
+    {name:"فعالیت ورزشی:" , type:"sport" , percent: 0},
+    {name: "نمرات دروس تخصصی:" , type:"lessons" , percent: 0},
+    {name:"فعالیت فرهنگی:" , type:"culture" , percent: 0},
+ ]); 
+
+  const handleAdd = () => {
+     setItems(preitems => ({...preitems , [items.percent]: items.percent +5 }));
    }
-   function handleDec() {
-    if(percent === 0) return
-    setPercent((num)=> num - 5);
-   }
+  
   return (
     <div>
-        <p>{title}</p>
-        {items.map((item , index)=> 
-             <CountBox name={name} onAdd={handleAdd} onDlt={handleDec} num={percent} items={item} id={index}/>
+      
+        <p>شاخص کلاس بندی</p>
+        {items.map((item)=> 
+             <CountBox  onAdd={handleAdd}  num={item.percent} items={item}/>
        )}
           
     </div>

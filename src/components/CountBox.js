@@ -1,13 +1,14 @@
 import React from "react";
 import { toPersianDigit } from "../components/toPersianDigit";
 
-function CountBox({ onAdd, num, onDlt, name, items, id}) {
+function CountBox({ onAdd, num, onDlt, items}) {
+  
   return (
     <>
       <div className="count">
         
-         <p style={{ margin: "0%", fontSize: "20px",  width:"30%" }}>{items.sport}</p>
-        
+         <p style={{ margin: "0%", fontSize: "20px",  width:"50%" }}>{items.name}</p>
+                
         <div className="count-item-long" onClick={onAdd}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +26,8 @@ function CountBox({ onAdd, num, onDlt, name, items, id}) {
             />
           </svg>
         </div>
-        <p style={{ margin: "0%", fontSize: "22px" }}>{name}   {`${toPersianDigit(num)}`}</p>
+        <p style={{ margin: "0%", fontSize: "22px" }}>٪  {`${toPersianDigit(num)}`}</p>
+     
         <div className="count-item-long" onClick={onDlt}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -18,7 +18,7 @@ const AllocateStudentToClass = () => {
         ))}
       </div>
       <CountBoxPage />
-      <ClassSetting />
+      <ClassSetting  />
      
     </>
   );

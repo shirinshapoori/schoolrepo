@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pattern } from './Pattern';
+import ClassCostomizePattern from './ClassCostomizePattern';
 
 const ClassSetting = () => {
   const patterns = [{ name: "الگو اول", score: "۹۰%", disipline: "۱۰%" },

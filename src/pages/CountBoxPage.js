@@ -9,7 +9,6 @@ function CountBoxPage() {
   function handleAdd() {
     setClassNum((num) => num + 1);
     setClasses([...classes , {min: 0 , max:0 , editable:false}]);
-    
   }
          
   function handleDlt() {
