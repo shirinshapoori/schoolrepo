@@ -16,7 +16,7 @@ function CountBoxPage() {
     setClassNum((num) => num - 1);
     setClasses(classes.slice(0 , classes.length - 1))
   }
-   
+    
   return (
     <div
       className="back-blue"

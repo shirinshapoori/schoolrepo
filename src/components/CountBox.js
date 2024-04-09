@@ -1,15 +1,15 @@
 import React from "react";
 import { toPersianDigit } from "../components/toPersianDigit";
 
-function CountBox({ onAdd, num, onDlt, items}) {
+function CountBox({ onAdd, num, onDlt, item}) {
   
   return (
     <>
       <div className="count">
         
-         <p style={{ margin: "0%", fontSize: "20px",  width:"50%" }}>{items.name}</p>
+         <p style={{ margin: "0%", fontSize: "20px",  width:"50%" }}>{item.name}</p>
                 
-        <div className="count-item-long" onClick={onAdd}>
+        <div className="count-item-long" onClick={()=>onAdd(item.type)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -26,23 +26,18 @@ function CountBox({ onAdd, num, onDlt, items}) {
             />
           </svg>
         </div>
-        <p style={{ margin: "0%", fontSize: "22px" }}>٪  {`${toPersianDigit(num)}`}</p>
+        <p style={{ margin: "0%", fontSize: "22px", width:"10%", textAlign:"center" }}>٪  {`${toPersianDigit(num)}`}</p>
      
-        <div className="count-item-long" onClick={onDlt}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 30 12"
-          >
-            <path
-              fill="#1472FF"
-              fill-rule="evenodd"
-              d="M1 10a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1"
-              clip-rule="evenodd"
-            />
+        <div className="count-item-long" onClick={() => onDlt(item.type)}>
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        width="12px" height="12px" viewBox="0 0 14 14">
+          <path fill="none" stroke="#1472ff" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M.5 7h13"
+          />
           </svg>
-        </div>
+         </div>
         </div>
     </>
   );
