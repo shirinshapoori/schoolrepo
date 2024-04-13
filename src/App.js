@@ -24,13 +24,13 @@ import ClassCostomizePattern from './components/ClassCostomizePattern'
 function App() {
   
   return (<>
-      <Navbar /> 
+      <Navbar />  
+      {/* <AllocateStudentToClass /> */}
       {/* <ClassCostomizePattern /> */}
-      <AllocateStudentToClass />
       {/* <StudentCard /> */}
       {/* <StudentsList /> */}
       {/* <SearchBar /> */}
-      {/* <InfoCard /> */}
+      <InfoCard />
       {/* <DecIncPage /> */}
       {/* <ClassFilter /> */}
       {/* <FilteredItem /> */}

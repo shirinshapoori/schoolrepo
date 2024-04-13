@@ -39,12 +39,12 @@ const ClassCostomizePattern = () => {
    };
 
   return (
-    <div>
-      <p>شاخص کلاس بندی</p>
+    <>
+      <p className="btn-class-lable">کلاس‌بندی سفارشی</p>
       {items.map((item) => (
         <CountBox onAdd={handleAdd} onDlt={handleDlt} num={item.percent} item={item} />
       ))}
-    </div>
+    </>
   );
 };
 

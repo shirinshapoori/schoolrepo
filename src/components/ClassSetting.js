@@ -1,23 +1,39 @@
-import React from 'react'
-import { Pattern } from './Pattern';
-import ClassCostomizePattern from './ClassCostomizePattern';
+import React, { useState } from "react";
+import { Pattern } from "./Pattern";
+import ClassCostomizePattern from "./ClassCostomizePattern";
 
 const ClassSetting = () => {
-  const patterns = [{ name: "الگو اول", score: "۹۰%", disipline: "۱۰%" },
-  { name: "الگو اول", score: "۹۰%", disipline: "۱۰%" }, { name: "الگو اول", score: "۹۰%", disipline: "۱۰%" }, { name: "الگو اول", score: "۹۰%", disipline: "۱۰%" },
+  const patterns = [
+    { name: "الگو اول", score: 80, disipline: 20},
+    { name: "الگو دوم", score: 70, disipline: 20, importance: 10 },
+    { name: "الگو سوم", score: 60, disipline: 20, importance: 20},
+    { name: "الگو سفارشی" },
   ];
- 
-  return (<>
-    <div>
-      <div className="back-blue">
-      <p className="btn-class-lable">شاخص کلاس‌بندی</p>
-    
-        {patterns.map((item, id) => (<>
-          <Pattern item={item} id={id} />
-        </>))}
-        
+  const [select, setSelect] = useState(-1);
+  const [custom, setCustom] = useState(false);
+  return (
+    <>
+        <div className="back-blue">
+          {custom ? (
+            <ClassCostomizePattern />
+          ) : (
+            <> 
+            <p className="btn-class-lable">شاخص کلاس‌بندی</p>
+              {patterns.map((item, index) => (
+                <>
+                  <Pattern
+                    item={item}
+                    id={index}
+                    isSelected={select === index}
+                    onClick={() =>index === 3 ? setCustom(true) : setSelect(index)}
+                  />
+                </>
+              ))}
+            </>
+          )}
         </div>
-    </div>
-  </>)
-}
+      
+    </>
+  );
+};
 export default ClassSetting;

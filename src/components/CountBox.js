@@ -7,8 +7,8 @@ function CountBox({ onAdd, num, onDlt, item}) {
     <>
       <div className="count">
         
-         <p style={{ margin: "0%", fontSize: "20px",  width:"50%" }}>{item.name}</p>
-                
+         <p className="txt">{item.name}</p>
+        
         <div className="count-item-long" onClick={()=>onAdd(item.type)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ function CountBox({ onAdd, num, onDlt, item}) {
           />
           </svg>
          </div>
-        </div>
+         </div>
     </>
   );
 }
