@@ -100,7 +100,8 @@ const InfoCard = () => {
           <InfoCardList itemInfo={item} />
         </div>
       ))}
-      </>)} 
+      </>)}
+      
 
   return (
     <div className="back-blue" style={{ justifyContent: "center" }}>
