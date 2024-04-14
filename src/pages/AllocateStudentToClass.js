@@ -4,6 +4,7 @@ import ClassSetting from "../components/ClassSetting";
 import { GetPhotos } from "../api/BookRequest";
 import CountBoxPage from "./CountBoxPage";
 import CountBox from "../components/CountBox";
+import ProcessButton from "../components/ProcessButton";
 
 const AllocateStudentToClass = () => {
   const items = [
@@ -21,6 +22,8 @@ const AllocateStudentToClass = () => {
       </div>
       <CountBoxPage />
       <ClassSetting />
+      <div style={{display:"flex",alignItems:"center"}}>
+      <ProcessButton processText={'پردازش'} /></div>
     </>
   );
 };
