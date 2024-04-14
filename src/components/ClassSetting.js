@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Pattern } from "./Pattern";
-import ClassCostomizePattern from "./ClassCostomizePattern";
+import ClassCustomizePattern from "./ClassCustomizePattern";
 
 const ClassSetting = () => {
   const patterns = [
@@ -15,7 +15,7 @@ const ClassSetting = () => {
     <>
         <div className="back-blue">
           {custom ? (
-            <ClassCostomizePattern />
+            <ClassCustomizePattern />
           ) : (
             <> 
             <p className="btn-class-lable">شاخص کلاس‌بندی</p>

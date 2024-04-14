@@ -16,7 +16,7 @@ import FilteredItem from './components/FilteredItem'
 import Cancelbutton from './components/Cancelbutton'
 import SaveButton from './components/Savebutton'
 import StudentCardBack from './components/StudentCardBack'
-import ClassCostomizePattern from './components/ClassCostomizePattern'
+import ClassCostomizePattern from './components/ClassCustomizePattern'
 
 
 

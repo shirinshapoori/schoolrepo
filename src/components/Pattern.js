@@ -1,5 +1,5 @@
 import React from "react";
-import ClassCostomizePattern from "./ClassCostomizePattern";
+import ClassCostomizePattern from "./ClassCustomizePattern";
 
 export const Pattern = ({ item, id, isSelected, onClick }) => {
   return (

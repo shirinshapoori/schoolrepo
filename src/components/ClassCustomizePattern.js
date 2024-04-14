@@ -3,7 +3,7 @@ import CountBox from "./CountBox";
 import { toPersianDigit } from "./toPersianDigit";
 import { type } from "@testing-library/user-event/dist/type";
 
-const ClassCostomizePattern = () => {
+const ClassCustomizePattern = () => {
   //arraye az dictionary ha ya object ha
     const [items, setItems] = useState([
     { name: "معدل:", type: "score", percent: 0 },
@@ -48,5 +48,5 @@ const ClassCostomizePattern = () => {
   );
 };
 
-export default ClassCostomizePattern;
+export default ClassCustomizePattern;
 
