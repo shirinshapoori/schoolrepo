@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const PatternBar = ({onChangeMenu}) => {
-  const [state, setState] = useState(-1);
+const PatternBar = ({onChange, selectedPattern}) => {
 
   return (
     <div className="pattern-bar">
@@ -13,31 +12,29 @@ const PatternBar = ({onChangeMenu}) => {
         <img
           src="./sabz.png"
           alt=""
-          onClick={() => setState(onChangeMenu)}
-          className={state === 0 ? "pattern-img-select" : "pattern-img"}
+          onClick={() => onChange(0)}
+          className={selectedPattern === 0 ? "pattern-img-select" : "pattern-img"}
         />
 
         <img
           src="./naranji.png"
           alt=""
-          
-         onClick={() => setState(onChangeMenu)}
-          className={state === 1 ? "pattern-img-select" : "pattern-img"}
+          onClick={() => onChange(1)}
+          className={selectedPattern === 1 ? "pattern-img-select" : "pattern-img"}
         />
 
         <img
           src="./zard.png"
           alt=""
-          //onClick={() => setState(index)}
-          onClick={() => setState(onChangeMenu)}
-          className={state === 2 ? "pattern-img-select" : "pattern-img"}
+          onClick={() => onChange(2)}
+          className={selectedPattern === 2 ? "pattern-img-select" : "pattern-img"}
         />
 
         <img
           src="./qermez.png"
-         // onClick={() => setState(index)}
-       onClick={() => setState(onChangeMenu)}
-          className={state === 3 ? "pattern-img-select" : "pattern-img"}
+          alt=""
+          onClick={() => onChange(3)}
+          className={selectedPattern === 3 ? "pattern-img-select" : "pattern-img"}
         />
       </div>
     </div>

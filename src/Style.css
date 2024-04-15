@@ -194,6 +194,7 @@ button {
 /* -------------------------------------------------لیست دانش آموزان ۷۰۱ */
 .card-img {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 28%;
   justify-content: space-between;
