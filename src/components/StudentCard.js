@@ -5,7 +5,7 @@ const StudentCard = ({ moveMode }) => {
   
   if (selectedStudent) {
     return (
-      <div className="card-img">
+      <div className="card-img" onClick={() => setSelectedStudent(false)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           style={{ position: "absolute" }}
