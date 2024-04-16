@@ -7,18 +7,24 @@ import SearchBar from "../components/SearchBar";
 const StudentsList = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [moveMode, setMoveMode] = useState(false);
-
+  const [search, setSearch] = useState(false);
   function handleFlip() {
     setIsFlipped(!isFlipped);
   }
   return (
     <>
-      <SearchBar onClick={setMoveMode} moveModeClick={moveMode} />
-      {moveMode ? 
+      <SearchBar
+        onClick={setMoveMode}
+        moveModeClick={moveMode}
+        onSearch={setSearch}
+        search={search}
+      />
+      {moveMode ? (
         <>
-          <div className="alphabet">الف</div> <StudentCard moveMode={moveMode} />
+          <div className="alphabet">الف</div>{" "}
+          <StudentCard moveMode={moveMode} />
         </>
-       : 
+      ) : (
         <>
           <div className="alphabet">الف</div>
           <ReactCardFlip
@@ -35,7 +41,7 @@ const StudentsList = () => {
             </div>
           </ReactCardFlip>
         </>
-    }
+      )}
 
       {/* <div onClick={handleFlip}>
     {isFlipped ? <StudentCard /> : <StudentCardBack />}

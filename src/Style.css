@@ -252,6 +252,7 @@ button {
 
 .search {
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   direction: ltr;
@@ -352,7 +353,10 @@ button {
 
 .filter {
   display: flex;
+  position: absolute;
   flex-wrap: wrap;
+  top: 91%;
+  left: 12.4%;
   width: 80%;
   background-color: #fafafa;
   border: 0.5px solid #1472ff;
@@ -379,6 +383,7 @@ button {
   border-radius: 5%;
   padding: 2% 1% 2% 1%;
   font-size: 18px;
+  direction: rtl;
 }
 .actions {
   background-color: #1472ff;

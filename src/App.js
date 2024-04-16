@@ -22,10 +22,10 @@ function App() {
   
   return (<>
       <Navbar />  
-      {/* <AllocateStudentToClass /> */}
+      <AllocateStudentToClass />
       {/* <ClassCostomizePattern /> */}
       {/* <StudentCard /> */}
-      <StudentsList />
+      {/* <StudentsList /> */}
       {/* <SearchBar /> */}
       {/* <InfoCard /> */}
       {/* <DecIncPage /> */}
