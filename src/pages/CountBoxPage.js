@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountBox from "../components/CountBox";
 import { toPersianDigit } from "../components/toPersianDigit";
+import axios from "axios";
 
 function CountBoxPage() {
   const [classNum, setClassNum] = useState(1);
   const [classes, setClasses] = useState([{ min: 0, max: 0, editable: false }]);
+  
 
   function handleAdd() {
     setClassNum((num) => num + 1);
@@ -15,8 +17,49 @@ function CountBoxPage() {
     if (classNum === 1) return;
     setClassNum((num) => num - 1);
     setClasses(classes.slice(0, classes.length - 1));
-  }
+    useEffect = (() => {
+      axios
+      .delete("/1")
+      .then(() => {
+        setDlt(null)
+      })
+      .catch((error) => {
+          console.log(error);
+        });
+         },
+    []);
+  } 
 
+  const [dlt,setDlt] = useState(null);
+  const [inputMax, setInputMax] = useState(0);
+  const [inputMin, setInputMin] = useState(0);
+
+  const handleInputMax = (e) => {
+    setInputMax(e.target.value);
+  };
+  const handleInputMin = (e) => {
+    setInputMin(e.target.value);
+  };
+
+  const url = "https://api.behpouyan.ir/Class";
+
+  useEffect =
+    (() => {
+      axios
+        .post(url, {
+          maxStuCount: inputMax,
+          minStuCount: inputMin,
+        })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    []);
+ 
+   
   return (
     <div
       className="back-blue"
@@ -57,8 +100,18 @@ function CountBoxPage() {
               paddingTop: "1.5%",
             }}
           >{`کلاس ${toPersianDigit(index + 1)}`}</p>
-          <input className="input-min" placeholder="حداقل"></input>
-          <input className="input-max" placeholder="حداکثر"></input>
+          <input
+            className="input-min"
+            placeholder="حداقل"
+            value={inputMin}
+            onChange={handleInputMin}
+          ></input>
+          <input
+            className="input-max"
+            placeholder="حداکثر"
+            value={inputMax}
+            onChange={handleInputMax}
+          ></input>
 
           <div className="count-item" onClick={handleDlt}>
             <svg
