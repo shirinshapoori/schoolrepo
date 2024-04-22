@@ -4,11 +4,13 @@ import { toPersianDigit } from "../components/toPersianDigit";
 import axios from "axios";
 
 function CountBoxPage() {
+  const [editOn, setEditOn] = useState(false);
   const [classNum, setClassNum] = useState(1);
   const [classes, setClasses] = useState([{ min: 0, max: 0, editable: false }]);
   
 
   function handleAdd() {
+    setEditOn(true);
     setClassNum((num) => num + 1);
     setClasses([...classes, { min: 0, max: 0, editable: false }]);
   }
@@ -43,8 +45,7 @@ function CountBoxPage() {
 
   const url = "https://api.behpouyan.ir/Class";
 
-  useEffect =
-    (() => {
+  useEffect(() => {
       axios
         .post(url, {
           maxStuCount: inputMax,
@@ -58,8 +59,9 @@ function CountBoxPage() {
         });
     },
     []);
- 
-   
+  
+    if (editOn) { <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#1472ff" d="m14.06 9.02l.92.92L5.92 19H5v-.92zM17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94z"/></svg> 
+  }
   return (
     <div
       className="back-blue"
@@ -76,7 +78,7 @@ function CountBoxPage() {
           style={{ padding: "1% 2% 1.5% 2%" }}
         >
           <div className="count-item" onClick={handleAdd}>
-            <svg
+          <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -91,6 +93,7 @@ function CountBoxPage() {
                 d="M256 112v288m144-144H112"
               />
             </svg>
+            
           </div>
           <p
             style={{

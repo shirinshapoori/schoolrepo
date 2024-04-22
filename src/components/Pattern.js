@@ -1,5 +1,5 @@
 import React from "react";
-import ClassCostomizePattern from "./ClassCustomizePattern";
+import { toPersianDigit } from "../components/toPersianDigit";
 
 export const Pattern = ({ item, id, isSelected, onClick }) => {
   return (
@@ -9,16 +9,17 @@ export const Pattern = ({ item, id, isSelected, onClick }) => {
         <p className="border">شاخص های مدنظر</p>
       ) : (
         <>
-          <p className="border">میانگین معدل: {item.score}</p>
-          <p className="border">انضباط: {item.disipline}</p>
+          <p className="border">{`میانگین معدل: ${toPersianDigit(item.score)}`}</p>
+          <p className="border"> {`انضباط: ${toPersianDigit(item.disipline)}`}</p>
         </>
       )}
       {id === 1 || id === 2 ? (
-        <p className="border">نمرات تخصصی: {item.importance}</p>
+        <p className="border">{`نمرات تخصصی: ${toPersianDigit(item.importance)}`}</p>
       ) : null}
     </div>
   );
 };
+
 //  <p className={switch(id){
 //           case 0: return "border green";
 //           case 1: return "border naranji";
