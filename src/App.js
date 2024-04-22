@@ -24,10 +24,10 @@ function App() {
       {/* <AllocateStudentToClass /> */}
       {/* <ClassCostomizePattern /> */}
       {/* <StudentCard /> */}
-      {/* <StudentsList /> */}
+      <StudentsList />
       {/* <SearchBar /> */}
       {/* <InfoCard /> */}
-      <ClassFilter />
+      {/* <ClassFilter /> */}
       {/* <FilteredItem /> */}
       {/* <CountBoxPage /> */}
       {/* <SaveButton saveText={'انتقال'} /> */}

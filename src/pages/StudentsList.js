@@ -8,16 +8,18 @@ const StudentsList = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [moveMode, setMoveMode] = useState(false);
   const [search, setSearch] = useState(false);
+ 
   function handleFlip() {
     setIsFlipped(!isFlipped);
   }
+  
   return (
     <>
       <SearchBar
         onClick={setMoveMode}
         moveModeClick={moveMode}
         onSearch={setSearch}
-        search={search}
+        search={search}   
       />
       {moveMode ? (
         <>

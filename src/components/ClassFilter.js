@@ -10,18 +10,26 @@ const ClassFilter = () => {
     { name: "فعالیت فرهنگی" ,isSelected:false },
     { name: "فعالیت ورزشی" ,isSelected:false },
   ]);
-   const [select , setSelect]=useState(-1);
+ 
   function filterHandler(index) {
-    setSelect(index);
-    setItems([...items, { isSelected:true } ]);
+    let newItem= items.map((item , i) => {
+      if(i === index) {
+        return {...item,  isSelected: !item.isSelected }
+      }
+      return item;
+    });
+    setItems(newItem);
   }
 
   return (
     <div className="filter">
       <p className="lable">شاخص ها</p>
       {items.map((item,index) => (
-
-          <SelectFilter item={item} onClick={() => filterHandler(index)} id={index}  isSelected={select === index } />
+          <SelectFilter
+           item={item} 
+           onClick={() => filterHandler(index)}
+           id={index} 
+           isSelected={item.isSelected} />
       ))}
       <button className="actions">اعمال</button>
     </div>
