@@ -31,8 +31,8 @@ function CountBoxPage() {
   } 
 
   const [dlt,setDlt] = useState(null);
-  const [inputMax, setInputMax] = useState(0);
-  const [inputMin, setInputMin] = useState(0);
+  const [inputMax, setInputMax] = useState();
+  const [inputMin, setInputMin] = useState();
 
   const handleInputMax = (e) => {
     setInputMax(e.target.value);
