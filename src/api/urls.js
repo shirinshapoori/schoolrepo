@@ -5,8 +5,8 @@ const urls = {
     class:()=> `${API_BASE_URL}/Class`,
     grade:()=> `${API_BASE_URL}/GetGradeAndFields`,
     pattern:()=> `${API_BASE_URL}/ClassificationPatterns`,
-    submit:()=> `${API_BASE_URL}/AssignStuToClass`,
-    customize:()=> `${API_BASE_URL}/Constraints`,
+    assignStuToClass:()=> `${API_BASE_URL}/AssignStuToClass`,
+    customizePattern:()=> `${API_BASE_URL}/Constraints`,
     addcustomize:()=> `${API_BASE_URL}/addCustomize`,
     dltcustomize:()=> `${API_BASE_URL}/deleteCustomize`,
   }

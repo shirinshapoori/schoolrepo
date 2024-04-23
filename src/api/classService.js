@@ -7,21 +7,21 @@ import {
   sendRequest,
 } from "./axiosRequest.js";
 
-export async function addClassReq(name, minStuCount, maxStuCount, fkid) {
+export async function addClassReq(name, minStuCount, maxStuCount, fkRGFId) {
   return await sendRequest(urls.school.class(), METHOD_POST, {
     name: name,
     minStuCount: minStuCount,
     maxStuCount: maxStuCount,
-    fkid: fkid,
+    fkRGFId: fkRGFId,
   });
 }
 
 export async function updateClassReq() {
-  return await sendRequest(urls.school.grade(), METHOD_PUT);
+  return await sendRequest(urls.school.class(), METHOD_PUT);
 }
 
 export async function deleteClassReq() {
-  return await sendRequest(urls.school.grade(), METHOD_DELETE);
+  return await sendRequest(urls.school.class(), METHOD_DELETE);
 }
 
 export async function getGradeAndFields() {
