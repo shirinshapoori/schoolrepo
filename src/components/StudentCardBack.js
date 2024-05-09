@@ -1,25 +1,14 @@
 import React from 'react'
 
-const StudentCardBack = () => {
-  const infoItem = [{
-    name:"محمد سجادی",
-    score : "معدل",
-    discipline: "انضباط", 
-    scientific:"نشان علمی",
-    sport:"فعالیت ورزشی", 
-     }]
-
+const StudentCardBack = ({info}) => {
   return (
-      <div className="card-img" style={{height:"150px"}}>
-         {infoItem.map((item) => (<>
-          <p className='txt-back'>{item.name}</p>
-          <p className='txt-back'>{item.score}:</p>
-          <p className='txt-back'>{item.discipline}:</p>
-          <p className='txt-back'>{item.scientific}:</p>
-          <p className='txt-back'>{item.sport}:</p>
-        </> ))}
-        </div>
+      <div className="card-img" style={{paddingBottom:"21%"}}>
+          <p className='txt-back'>{info.name}</p>
+          <p className='txt-back'>معدل: {info.score}</p>
+          <p className='txt-back'>انضباط: {info.discipline ? info.discipline : "ندارد"}</p>
+          <p className='txt-back'>نشان علمی: {info.scientific}</p>
+          <p className='txt-back'>فعالیت ورزشی: {info.sport}</p>
+      </div>
   )
 }
-
 export default StudentCardBack 

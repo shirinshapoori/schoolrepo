@@ -16,12 +16,18 @@ import Cancelbutton from './components/Cancelbutton'
 import SaveButton from './components/Savebutton'
 import StudentCardBack from './components/StudentCardBack'
 import ClassCostomizePattern from './components/ClassCustomizePattern'
+import Alarm from './components/Alarm'
+import AlarmPage from './pages/AlarmPage'
+import PersonalInfoPage from './pages/PersonalInfoPage'
 
 function App() {
-  
+
+
   return (<>
       <Navbar />  
-      <AllocateStudentToClass />
+      {/* <AlarmPage /> */}
+      <PersonalInfoPage />
+      {/* <AllocateStudentToClass /> */}
       {/* <ClassCostomizePattern /> */}
       {/* <StudentCard /> */}
       {/* <StudentsList /> */}

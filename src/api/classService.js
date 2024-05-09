@@ -32,12 +32,16 @@ export async function getClassificationPatterns() {
   return await sendRequest(urls.school.pattern(), METHOD_GET);
 }
 
-export async function assignStuToClass() {
-  return await sendRequest(urls.school.submit(), METHOD_POST);
+// export async function assignStuToClass(id) {
+//     const {relId} =  await sendRequest(urls.school.assignStuToClass(), METHOD_POST , id);
+//     return relId;
+// }
+export async function assignStuToClass(id) {
+  return await sendRequest(urls.school.assignStuToClass(), METHOD_POST , id);
 }
 
 export async function getConstraints() {
-  return await sendRequest(urls.school.customize(), METHOD_GET);
+  return await sendRequest(urls.school.customizePattern(), METHOD_GET);
 }
 
 export async function addCustomize() {

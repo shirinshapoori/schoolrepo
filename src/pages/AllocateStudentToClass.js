@@ -20,14 +20,6 @@ const AllocateStudentToClass = () => {
   //   .catch(error => console.log(error))
   // }, []);
 
-  // useEffect(() => {
-  //   getGradeAndFields().then((res) => {
-  //     if (res.isSuccess) {
-  //       setGrade(res.data);
-  //     }
-  //   })
-  // }, []);
-
   useEffect(() => {
     getGradeAndFields().then((res) => {
       if (res.isSuccess) {
@@ -53,7 +45,7 @@ const AllocateStudentToClass = () => {
       <CountBoxPage relId={grade.length && grade[select].relId} />
       <ClassSetting />
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <ProcessButton processText={"پردازش"} />
+        <ProcessButton processText={"پردازش"}  />
       </div>
     </>
   );

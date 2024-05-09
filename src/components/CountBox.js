@@ -7,9 +7,9 @@ function CountBox({ onAdd, num, onDlt, item}) {
     <>
       <div className="count">
         
-         <p className="txt">{item.name}</p>
+         <p className="txt">{item.title}</p>
         
-        <div className="count-item-long" onClick={()=>onAdd(item.type)}>
+        <div className="count-item-long" onClick={()=>onAdd(item.id)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -28,7 +28,7 @@ function CountBox({ onAdd, num, onDlt, item}) {
         </div>
         <p style={{ margin: "0%", fontSize: "22px", width:"10%", textAlign:"center" }}>٪  {`${toPersianDigit(num)}`}</p>
      
-        <div className="count-item-long" onClick={() => onDlt(item.type)}>
+        <div className="count-item-long" onClick={() => onDlt(item.id)}>
         <svg xmlns="http://www.w3.org/2000/svg" 
         width="12px" height="12px" viewBox="0 0 14 14">
           <path fill="none" stroke="#1472ff" 

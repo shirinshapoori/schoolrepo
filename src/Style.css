@@ -196,10 +196,9 @@ button {
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 28%;
   justify-content: space-between;
   border-radius: 10%;
-  margin: 1% 2%;
+  margin: 1% 2% 8%;
   border: 1px solid #bae6fd;
   box-shadow: 0px 2px 2px 0px rgba(116, 116, 120, 0.25);
   z-index: 0;
@@ -461,4 +460,80 @@ button {
   box-shadow: 1px 2px 3px 1px rgba(192, 192, 192, 0.25);
 }
 
-/* ============================================================== شاخص های کلاسبندی سفارش =============== */
+/* ============================================================== پروفایل =============== */
+.profile-border {
+  display: flex;
+  border: 0.5px solid #a8dafe;
+  border-radius: 15px;
+  width: 98%;
+  padding: 3% 0% 3% 0%;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5%;
+}
+.alarm {
+  width: 87%;
+  background-color: #eaf6fb;
+  border-right: 6px solid #ffcb14;
+  border-radius: 6px;
+  margin-bottom: 3%;
+  padding: 0% 2% 0% 2%;
+}
+.long-txt {
+  margin: 0%;
+  font-size: 18px;
+  width: 100%;
+  padding-right: 1%;
+}
+.animate-img {
+  width: 50%;
+  height: 50%;
+  margin: 30% 0% 10% 0%;
+  animation: rotation 4s infinite linear;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-12deg);
+  }
+  /* from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(12deg);
+  } */
+}
+/* -----------------------------اطلاعات فردی------------------------------------ */
+.personal {
+  width: 87%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1% 2% 1% 2%;
+}
+.personal-info {
+  width: 87%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 5%;
+  padding: 2%;
+  box-shadow: 0 2px 1px 0 rgba(224, 224, 224, 0.2),
+    0px 0px 4px 1px rgba(88, 88, 88, 0.2);
+}
+.more-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2% 0% 2% 0%;
+  border-bottom: 0.5px solid #1472ff;
+  width: 83%;
+}
