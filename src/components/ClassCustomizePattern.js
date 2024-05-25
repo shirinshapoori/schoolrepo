@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CountBox from "./CountBox";
-import { toPersianDigit } from "./toPersianDigit";
 import { type } from "@testing-library/user-event/dist/type";
 import { getConstraints } from "../api/classService";
 

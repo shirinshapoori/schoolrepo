@@ -19,15 +19,19 @@ import ClassCostomizePattern from './components/ClassCustomizePattern'
 import Alarm from './components/Alarm'
 import AlarmPage from './pages/AlarmPage'
 import PersonalInfoPage from './pages/PersonalInfoPage'
+import HomeWork from './components/HomeWork'
+import PeresentAbsent from './components/PeresentAbsent'
 
 function App() {
 
 
   return (<>
       <Navbar />  
+      {/* <HomeWork /> */}
+      {/* <PeresentAbsent /> */}
       {/* <AlarmPage /> */}
-      <PersonalInfoPage />
-      {/* <AllocateStudentToClass /> */}
+      {/* <PersonalInfoPage /> */}
+      <AllocateStudentToClass />
       {/* <ClassCostomizePattern /> */}
       {/* <StudentCard /> */}
       {/* <StudentsList /> */}

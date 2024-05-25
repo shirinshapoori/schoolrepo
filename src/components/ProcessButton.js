@@ -1,22 +1,21 @@
 import React, { useState } from 'react'
 import { assignStuToClass } from '../api/classService';
 
-const ProcessButton = ({processText}) => {
+const ProcessButton = ({processText, grade}) => {
 
-  const[relId,setrelId]=useState({id:0});
-
+  const[relId,setrelId]= useState(-1);
+  
   function sendProcess(){
-    setrelId({id:0});
-    assignStuToClass(relId.id).then((res)=> {
+    assignStuToClass().then((res)=> {
     if(res.isSuccess){
-     setrelId({ id: relId.id });
+     setrelId(res.data);
     }
    })
   }
   
   return (
     <button className='process' onClick={sendProcess}>
-        {processText} 
+        {processText} {relId} 
     </button>
   )
 }

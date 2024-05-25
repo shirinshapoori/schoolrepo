@@ -4,7 +4,7 @@ import ClassCustomizePattern from "./ClassCustomizePattern";
 import { getClassificationPatterns } from "../api/classService";
 
 const ClassSetting = () => {
- const [patterns, setPatterns] = useState([]);
+ const [patterns, setPatterns] = useState([{}]);
 
   const [select, setSelect] = useState(-1);
   const [custom, setCustom] = useState(false);

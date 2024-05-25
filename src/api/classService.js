@@ -15,7 +15,9 @@ export async function addClassReq(name, minStuCount, maxStuCount, fkRGFId) {
     fkRGFId: fkRGFId,
   });
 }
-
+export async function assignStuToClass(RGFId) {
+  return await sendRequest(urls.school.assignStuToClass(RGFId), METHOD_POST);
+}
 export async function updateClassReq() {
   return await sendRequest(urls.school.class(), METHOD_PUT);
 }
@@ -36,9 +38,7 @@ export async function getClassificationPatterns() {
 //     const {relId} =  await sendRequest(urls.school.assignStuToClass(), METHOD_POST , id);
 //     return relId;
 // }
-export async function assignStuToClass(id) {
-  return await sendRequest(urls.school.assignStuToClass(), METHOD_POST , id);
-}
+
 
 export async function getConstraints() {
   return await sendRequest(urls.school.customizePattern(), METHOD_GET);

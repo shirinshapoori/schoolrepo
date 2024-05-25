@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 @font-face {
   font-family: Aviny;
@@ -140,7 +140,10 @@ button {
   color: #fd6929;
 }
 .border-blue {
+  display: flex;
   border: 1px solid #1472ff;
+  border-radius: 6px;
+  align-items: center;
 }
 .back-white {
   display: flex;
@@ -528,7 +531,8 @@ button {
   align-items: center;
   background-color: #ffffff;
   border-radius: 6px;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
+  margin-top: 3%;
   padding: 2%;
   box-shadow: 0 2px 1px 0 rgba(224, 224, 224, 0.2),
     0px 0px 4px 1px rgba(88, 88, 88, 0.2);
@@ -539,7 +543,7 @@ button {
   justify-content: space-between;
   margin-top: 3%;
   border-bottom: 0.5px solid #1472ff;
-  width: 83%;
+  width: 90%;
 }
 .personal-titr {
   width: 96%;
@@ -556,8 +560,91 @@ button {
   border: 1px solid #e2e1e1;
   border-radius: 7px;
   padding-right: 3%;
+  font-family: "Aviny";
 }
 textarea:focus,
 input:focus {
   outline: 0.5px solid #1472ff;
+}
+
+.homework {
+  background-color: #f5f5f5;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  bottom: 0%;
+  right: 0%;
+  padding-top: 10%;
+}
+.taklif {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0% 2% 0% 1%;
+  border: 1px solid #c2c2c2;
+  border-radius: 6px;
+}
+
+.square {
+  width: 15px;
+  height: 15px;
+  margin-left: 5%;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.modal {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30%;
+  align-items: center;
+  flex-direction: column;
+  width: 94%;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 1px 0 rgba(224, 224, 224, 0.2),
+    0px 0px 4px 1px rgba(88, 88, 88, 0.2);
+  padding: 5% 0% 5% 0%;
+}
+
+.gradient-titr {
+  width: 90%;
+  text-align: center;
+  align-items: center;
+  margin-top: 3%;
+}
+.yellow {
+  background: rgb(255, 251, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 251, 251, 1) 0%,
+    rgba(255, 252, 226, 1) 11%,
+    rgba(255, 242, 177, 1) 49%,
+    rgba(255, 252, 226, 1) 89%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.red {
+  color: black;
+  background: rgb(255, 251, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 251, 251, 1) 0%,
+    rgba(255, 226, 226, 1) 11%,
+    rgba(255, 183, 183, 1) 27%,
+    rgba(255, 171, 171, 1) 52%,
+    rgba(255, 220, 220, 1) 89%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.txt-underline {
+  width: 90%;
+  border-bottom: 1px solid #e2e1e1;
+  margin: 1% 0% 1% 0%;
+  padding-right: 1%;
 }

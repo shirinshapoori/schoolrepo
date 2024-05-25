@@ -45,7 +45,7 @@ const AllocateStudentToClass = () => {
       <CountBoxPage relId={grade.length && grade[select].relId} />
       <ClassSetting />
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <ProcessButton processText={"پردازش"}  />
+        <ProcessButton processText={"پردازش"}  grade={grade}/>
       </div>
     </>
   );
