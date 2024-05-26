@@ -1,56 +1,86 @@
 import React, { useEffect, useState } from "react";
 import CountBox from "./CountBox";
-import { type } from "@testing-library/user-event/dist/type";
-import { getConstraints } from "../api/classService";
+import {
+  addOrUpdateCustomConstraints,
+  constraints,
+  deleteConstraints,
+} from "../api/classService";
+import { toPersianDigit } from "./toPersianDigit";
 
-const ClassCustomizePattern = () => {
-  //   const [items, setItems] = useState([
-  //   { name: "معدل:", type: "score", percent: 0 },
-  //   { name: "انضباط:", type: "discipline", percent: 0 },
-  //   { name: "نشان علمی (دارای رتبه برتر):", type: "scientific", percent: 0 },
-  //   { name: "فعالیت ورزشی:", type: "sport", percent: 0 },
-  //   { name: "نمرات دروس تخصصی:", type: "lessons", percent: 0 },
-  //   { name: "فعالیت فرهنگی:", type: "culture", percent: 0 },
-  // ]);
+const ClassCustomizePattern = ({ relId }) => {
   const [items, setItems] = useState([]);
-  
-  useEffect(()=>{
-    getConstraints().then((res)=> {
+
+  useEffect(() => {
+    constraints(relId).then((res) => {
       if (res.isSuccess) {
         setItems(res.data);
       }
-    })
+    });
   }, []);
 
-  const handleAdd = (id) => {
+  const handleAdd = (constraintId) => {
     let newItems = items.map((item) => {
-      if (item.id === id) {
+      if (item.constraintId === constraintId) {
+        if (!item.percent) item.percent = 0;
         if (item.percent === 100) return item;
-        let newItem = { ...item, percent: item.percent + 5 };
+        let newItem = { ...item, percent: item.percent };
+     
+        addOrUpdateCustomConstraints( constraintId,relId, item.percent + 5).then(
+          (res) => {
+            if (res.isSuccess) {
+              newItem = {
+                ...item,
+                percent: item.percent + 5,
+                constraintGuid: res.data,
+              };
+            }
+          }
+        );
+
         return newItem;
       }
       return item;
     });
     setItems(newItems);
   };
-  
-   const handleDlt = (id) => {
+
+  const handleDlt = (constraintId) => {
     let dltItems = items.map((item) => {
-        if (item.id === id) {
-            if( item.percent === 0) return item;
-            let dltItem = {...item , percent: item.percent - 5 };
-            return dltItem;
+      if (item.constraintId === constraintId) {
+        let dltItem = { ...item };
+        if (!item.percent || item.percent === 0) return item;
+        if (item.percent - 5 === 0) {
+          deleteConstraints().then((res) => {
+            if (res.isSuccess) dltItem.percent = 0;
+          });
         }
-        return item;
+
+        addOrUpdateCustomConstraints(constraintId, relId, item.percent - 5).then(
+          (res) => {
+            if (res.isSuccess) {
+              dltItem = { ...item,
+              percent: item.percent - 5,
+              constraintGuid: res.data, };
+            }
+          }
+        );
+        return dltItem;
+      }
+      return item;
     });
     setItems(dltItems);
-   };
+  };
 
   return (
     <>
       <p className="btn-class-lable">کلاس‌بندی سفارشی</p>
       {items.map((item) => (
-        <CountBox onAdd={handleAdd} onDlt={handleDlt} num={item.percent} item={item} />
+        <CountBox
+          onAdd={handleAdd}
+          onDlt={handleDlt}
+          num={item.percent ? item.percent : toPersianDigit(0)}
+          item={item}
+        />
       ))}
     </>
   );

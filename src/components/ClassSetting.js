@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Pattern } from "./Pattern";
 import ClassCustomizePattern from "./ClassCustomizePattern";
-import { getClassificationPatterns } from "../api/classService";
+import { classificationPatterns } from "../api/classService";
 
-const ClassSetting = () => {
+const ClassSetting = ({relId}) => {
  const [patterns, setPatterns] = useState([{}]);
 
   const [select, setSelect] = useState(-1);
   const [custom, setCustom] = useState(false);
 
   useEffect(() => {
-    getClassificationPatterns().then((res) => {
+    classificationPatterns(relId).then((res) => {
       if (res.isSuccess) {
         setPatterns(res.data);
       }
@@ -21,7 +21,7 @@ const ClassSetting = () => {
     <>
         <div className="back-blue">
           {custom ? (
-            <ClassCustomizePattern />
+            <ClassCustomizePattern relId={relId}/>
           ) : (
             <> 
             <p className="btn-class-lable">شاخص کلاس‌بندی</p>

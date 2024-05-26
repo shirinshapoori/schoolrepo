@@ -12,11 +12,11 @@ function AlarmCheck() {
  return(
   <div className='profile-border' >
        <div className='alarm'>
-          <p className='long-txt'>ازمون فردا اک اف</p>
+          <p className='long-txt'>آلارم ایز تستینگ</p>
        </div>
         <div className='alarm'>
-          <p className='long-txt'>ازمون فردا اک اddddd dddddd fdddd dddddd dddddd ddddف</p>
-       </div>
+          <p className='long-txt'>آلارم تست  آلارم تست  آلارم تست  آلارم تست  آلارم تست  آلارم تست  آلارم تست </p>
+       </div> 
         <img src='./alarm.png' alt='' className='animate-img'/>
     </div>
     )

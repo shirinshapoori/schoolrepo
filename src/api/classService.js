@@ -30,8 +30,8 @@ export async function getGradeAndFields() {
   return await sendRequest(urls.school.grade(), METHOD_GET);
 }
 
-export async function getClassificationPatterns() {
-  return await sendRequest(urls.school.pattern(), METHOD_GET);
+export async function classificationPatterns(RGFId) {
+  return await sendRequest(urls.school.pattern(RGFId), METHOD_POST);
 }
 
 // export async function assignStuToClass(id) {
@@ -39,15 +39,22 @@ export async function getClassificationPatterns() {
 //     return relId;
 // }
 
-
-export async function getConstraints() {
-  return await sendRequest(urls.school.customizePattern(), METHOD_GET);
+export async function constraints(RGFId) {
+  return await sendRequest(urls.school.customizePattern(RGFId), METHOD_POST);
 }
 
-export async function addCustomize() {
-  return await sendRequest(urls.school.addcustomize(), METHOD_POST);
+export async function addOrUpdateCustomConstraints(
+  constraintId,
+  rgfId,
+  percent,
+) {
+  return await sendRequest(urls.school.customConstraint(), METHOD_POST, {
+    constraintId: constraintId,
+    rgfId: rgfId,
+    percent:percent,
+  });
 }
 
-export async function deleteCustomize() {
-  return await sendRequest(urls.school.dltcustomize(), METHOD_DELETE);
+export async function deleteConstraints() {
+  return await sendRequest(urls.school.customConstraint(), METHOD_DELETE);
 }

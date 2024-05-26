@@ -4,11 +4,10 @@ const urls = {
   school:{
     class:()=> `${API_BASE_URL}/Class`,
     grade:()=> `${API_BASE_URL}/GetGradeAndFields`,
-    pattern:()=> `${API_BASE_URL}/ClassificationPatterns`,
+    pattern:(RGFId)=> `${API_BASE_URL}/ClassificationPatterns?RGFId=${RGFId}`,
     assignStuToClass:(RGFId)=> `${API_BASE_URL}/AssignStuToClass?RGFId=${RGFId}`,
-    customizePattern:()=> `${API_BASE_URL}/Constraints`,
-    addcustomize:()=> `${API_BASE_URL}/addCustomize`,
-    dltcustomize:()=> `${API_BASE_URL}/deleteCustomize`,
+    customizePattern:(RGFId)=> `${API_BASE_URL}/Constraints?RGFId=${RGFId}`,
+    customConstraint:()=> `${API_BASE_URL}/CustomConstraint`,
   }
 };
 

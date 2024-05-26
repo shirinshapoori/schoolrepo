@@ -22,11 +22,13 @@ import PersonalInfoPage from './pages/PersonalInfoPage'
 import HomeWork from './components/HomeWork'
 import PeresentAbsent from './components/PeresentAbsent'
 
+
 function App() {
 
 
   return (<>
       <Navbar />  
+     
       {/* <HomeWork /> */}
       {/* <PeresentAbsent /> */}
       {/* <AlarmPage /> */}

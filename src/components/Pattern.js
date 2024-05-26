@@ -15,7 +15,7 @@ export const Pattern = ({ item, id, isSelected, onClick }) => {
 
   const PatternItem = ({patternItem}) => {
          return (<>
-           <p className="border" style={{width:"90%"}}>{patternItem?.constraintTitle}: {patternItem?.parcent}</p>
+           <p className="border" style={{width:"90%"}}>{patternItem?.constraintTitle}: {patternItem?.parcent * 100}%</p>
           </>)
 }
 export default PatternItem
