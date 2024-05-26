@@ -55,6 +55,8 @@ export async function addOrUpdateCustomConstraints(
   });
 }
 
-export async function deleteConstraints() {
-  return await sendRequest(urls.school.customConstraint(), METHOD_DELETE);
+export async function deleteConstraints(constraintGuid) {
+  return await sendRequest(urls.school.customConstraint(), METHOD_DELETE,
+    constraintGuid
+  );
 }

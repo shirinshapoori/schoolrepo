@@ -18,57 +18,50 @@ const ClassCustomizePattern = ({ relId }) => {
     });
   }, []);
 
-  const handleAdd = (constraintId) => {
+  const changeItemById = (id, percent, constraintGuid) => {
     let newItems = items.map((item) => {
-      if (item.constraintId === constraintId) {
-        if (!item.percent) item.percent = 0;
-        if (item.percent === 100) return item;
-        let newItem = { ...item, percent: item.percent };
-     
-        addOrUpdateCustomConstraints( constraintId,relId, item.percent + 5).then(
-          (res) => {
-            if (res.isSuccess) {
-              newItem = {
-                ...item,
-                percent: item.percent + 5,
-                constraintGuid: res.data,
-              };
-            }
-          }
-        );
-
-        return newItem;
+      if (item.id === id) {
+        return { ...item, percent: percent, constraintGuid: constraintGuid };
       }
       return item;
     });
     setItems(newItems);
   };
 
-  const handleDlt = (constraintId) => {
-    let dltItems = items.map((item) => {
-      if (item.constraintId === constraintId) {
-        let dltItem = { ...item };
-        if (!item.percent || item.percent === 0) return item;
-        if (item.percent - 5 === 0) {
-          deleteConstraints().then((res) => {
-            if (res.isSuccess) dltItem.percent = 0;
-          });
-        }
+  const handleAdd = (id) => {
+    let selectedItem = items.filter((item) => item.id === id)[0];
+    if (!selectedItem.percent) selectedItem.percent = 0;
+       if (selectedItem.percent === 100 ) return;
 
-        addOrUpdateCustomConstraints(constraintId, relId, item.percent - 5).then(
-          (res) => {
-            if (res.isSuccess) {
-              dltItem = { ...item,
-              percent: item.percent - 5,
-              constraintGuid: res.data, };
-            }
-          }
-        );
-        return dltItem;
+    addOrUpdateCustomConstraints(id, relId, selectedItem.percent + 5).then(
+      (res) => {
+        if (res.isSuccess) {
+          changeItemById(id, selectedItem.percent + 5, res.data);
+        }
       }
-      return item;
-    });
-    setItems(dltItems);
+    );
+  };
+
+  const handleDlt = (id) => {
+    let selectedItem = items.filter((item) => item.id === id)[0];
+    // if (!selectedItem.percent || selectedItem.percent === 0) return;
+    if (!selectedItem.percent) selectedItem.percent = 0;
+       if (selectedItem.percent === 100 ) return;
+
+    if (selectedItem.percent - 5 === 0) {
+      deleteConstraints(selectedItem.constraintGuid).then((res) => {
+        if (res.isSuccess) changeItemById(id, 0, null);
+      });
+      return;
+    }
+    
+    addOrUpdateCustomConstraints(id, relId, selectedItem.percent - 5).then(
+      (res) => {
+        if (res.isSuccess) {
+          changeItemById(id, selectedItem.percent - 5, res.data);
+        }
+      }
+    );
   };
 
   return (

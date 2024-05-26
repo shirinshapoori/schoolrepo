@@ -1,16 +1,16 @@
 import axios from "axios";
-
 export const METHOD_POST = "POST";
 export const METHOD_GET = "GET";
 export const METHOD_PUT = "PUT";
 export const METHOD_PATCH = "PATCH";
 export const METHOD_DELETE = "DELETE";
 export async function sendRequest(url, method, requestData) {
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZGVudGlmaWVyIjoiMGQwMWYwYWEtMDFlMy00Njg1LTlhMzEtZGNiZGJmYjJkNTYzIiwiUmVsIjoiMjAyMCIsIlNjaG9vbCI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwiZXhwIjoxNzE2Nzg5NDYxLCJpc3MiOiJsb2FsaG9zdDo1MjI3IiwiYXVkIjoibG9jYWxob3N0OjUyMjcifQ.dG-xEGT1lKmI8I9Lgqm5yNkGjAkQRtVM7mGvyUmfy9k";
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZGVudGlmaWVyIjoiMGQwMWYwYWEtMDFlMy00Njg1LTlhMzEtZGNiZGJmYjJkNTYzIiwiUmVsIjoiMjAyMCIsIlNjaG9vbCI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwiZXhwIjoxNzE2ODEwNzUyLCJpc3MiOiJsb2FsaG9zdDo1MjI3IiwiYXVkIjoibG9jYWxob3N0OjUyMjcifQ.bVJB6V0vSSDX9n3ZU9bPgq5Bksk2oztuT41pQ7-Kp3c";
   return axios
     .request({
       method,
       url,
+      timeout:60000,
       headers: { Authorization: `Bearer ${token}` },
       data: requestData,
     })

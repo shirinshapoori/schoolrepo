@@ -21,6 +21,7 @@ import AlarmPage from './pages/AlarmPage'
 import PersonalInfoPage from './pages/PersonalInfoPage'
 import HomeWork from './components/HomeWork'
 import PeresentAbsent from './components/PeresentAbsent'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 
 function App() {
@@ -28,12 +29,18 @@ function App() {
 
   return (<>
       <Navbar />  
-     
+      {/* <BrowserRouter>
+      <Routes>
+         <Route path="/" element={<AllocateStudentToClass />}></Route>
+         <Route path="/InfoCard" element={<InfoCard />}></Route>
+       </Routes>
+      </BrowserRouter> */}
+       <AllocateStudentToClass />
       {/* <HomeWork /> */}
       {/* <PeresentAbsent /> */}
       {/* <AlarmPage /> */}
       {/* <PersonalInfoPage /> */}
-      <AllocateStudentToClass />
+     
       {/* <ClassCostomizePattern /> */}
       {/* <StudentCard /> */}
       {/* <StudentsList /> */}
