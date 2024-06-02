@@ -22,20 +22,20 @@ import PersonalInfoPage from './pages/PersonalInfoPage'
 import HomeWork from './components/HomeWork'
 import PeresentAbsent from './components/PeresentAbsent'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { PeresentAbsentButton } from './components/PeresentAbsentButton'
 
 
 function App() {
-
-
   return (<>
       <Navbar />  
-      {/* <BrowserRouter>
+      <BrowserRouter>
       <Routes>
-         <Route path="/" element={<AllocateStudentToClass />}></Route>
+         <Route path="/" element={<HomeWork />}></Route>
          <Route path="/InfoCard" element={<InfoCard />}></Route>
        </Routes>
-      </BrowserRouter> */}
-       <AllocateStudentToClass />
+      </BrowserRouter>
+
+      {/* <AllocateStudentToClass /> */}
       {/* <HomeWork /> */}
       {/* <PeresentAbsent /> */}
       {/* <AlarmPage /> */}

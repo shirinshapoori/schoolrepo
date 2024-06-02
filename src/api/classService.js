@@ -6,6 +6,7 @@ import {
   METHOD_DELETE,
   sendRequest,
 } from "./axiosRequest.js";
+import axios from "axios";
 
 export async function addClassReq(name, minStuCount, maxStuCount, fkRGFId) {
   return await sendRequest(urls.school.class(), METHOD_POST, {
@@ -55,8 +56,11 @@ export async function addOrUpdateCustomConstraints(
   });
 }
 
-export async function deleteConstraints(constraintGuid) {
-  return await sendRequest(urls.school.customConstraint(), METHOD_DELETE,
-    constraintGuid
-  );
+// export async function deleteConstraints(constraintGuid) {
+//   return await sendRequest(urls.school.customConstraint(), METHOD_DELETE);
+// }
+  export async function deleteConstraints(constraintGuid) {
+  return await axios.delete(urls.school.customConstraint(), {
+    data: constraintGuid,
+  });
 }

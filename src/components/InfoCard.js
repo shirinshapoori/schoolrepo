@@ -4,13 +4,19 @@ import ProcessButton from "./ProcessButton";
 
 const InfoCard = () => {
   const [patternSelect, SetPatternSelect] = useState(0);
+  //data : {patternId, pattern[{},{}, ...]} 
   const item = {
     score: "میانگین معدل",
     discipline: "انضباط",
     scientific: "نشان علمی",
     sport: "فعالیت ورزشی",
     students: "تعداد دانش آموزان",
-  };
+    disciplineAvg: "20",
+    scoreAvg: "18",
+    scientificAvg: "17",
+    sportAvg: "20",
+    studentsAvg: "23",
+  }; 
   function getPatternColor() {
     switch (patternSelect) {
       case 1:
@@ -43,20 +49,20 @@ export default InfoCard;
 export const InfoCardList = ({ itemInfo, color }) => {
   return (
     <>
-      <div className="line-before-text" style={{ borderColor: color }}>
-        {itemInfo.score} :
+      <div className="line-before-text" style={{ borderColor: color , fontSize:"18px"}}>
+        {itemInfo.score} : {itemInfo.scoreAvg}
       </div>
-      <div className="line-before-text" style={{ borderColor: color }}>
-        {itemInfo.discipline} :
+      <div className="line-before-text" style={{ borderColor: color , fontSize:"18px"}}>
+        {itemInfo.discipline} : {itemInfo.disciplineAvg}
       </div>
-      <div className="line-before-text" style={{ borderColor: color }}>
-        {itemInfo.scientific} :
+      <div className="line-before-text" style={{ borderColor: color , fontSize:"18px"}}>
+        {itemInfo.scientific} : {itemInfo.scientificAvg}
       </div>
-      <div className="line-before-text" style={{ borderColor: color }}>
-        {itemInfo.sport} :
+      <div className="line-before-text" style={{ borderColor: color , fontSize:"18px"}}>
+        {itemInfo.sport} : {itemInfo.sportAvg}
       </div>
-      <div className="line-before-text" style={{ borderColor: color }}>
-        {itemInfo.students} :
+      <div className="line-before-text" style={{ borderColor: color , fontSize:"18px"}}>
+        {itemInfo.students} : {itemInfo.studentsAvg}
       </div>
     </>
   );

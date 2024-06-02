@@ -5,6 +5,7 @@ const HomeWork = () => {
     const [select, setSelect]= useState(-1);
   return (
       <div className='homework'>
+        <p className='row txt' style={{marginBottom:"10%" , background:"white"}}>تکلیف</p>
         <div className='row'>
         {items.map((item, index) => (
              <button className={select === index ? 'border-blue' : 'taklif'} onClick={()=> setSelect(index)}>
@@ -13,10 +14,7 @@ const HomeWork = () => {
             </button>  
         ))}
       </div> 
-         <div style={{width:"100%", marginBottom:"15%"}}>
-           <button className='cancel' style={{marginRight:'10%', marginTop:"10%"}}>لغو</button>
-           <button className='save' style={{marginRight:'17%', marginTop:"0%"}}>ذخیره</button>
-         </div>
+           <button className='btn select'  style={{marginBottom:"15%", marginTop:"7%"}}>ذخیره</button>
     </div>
   )
 }

@@ -1,8 +1,12 @@
-[
+import React from 'react'
+
+const Res = () => {
+    const item = [
     {
         "patternId": 1,
         "pattern": [
             {
+                //avgOfClassName: "معدل"
                 "classId": 8,
                 "minSize": 5,
                 "maxSize": 15,
@@ -1160,3 +1164,9 @@
         ]
     }
 ]
+  return (
+    <div>{console.log(item)}</div>
+  )
+}
+
+export default Res

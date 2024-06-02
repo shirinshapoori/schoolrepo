@@ -5,7 +5,7 @@ export const METHOD_PUT = "PUT";
 export const METHOD_PATCH = "PATCH";
 export const METHOD_DELETE = "DELETE";
 export async function sendRequest(url, method, requestData) {
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZGVudGlmaWVyIjoiMGQwMWYwYWEtMDFlMy00Njg1LTlhMzEtZGNiZGJmYjJkNTYzIiwiUmVsIjoiMjAyMCIsIlNjaG9vbCI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwiZXhwIjoxNzE2ODEwNzUyLCJpc3MiOiJsb2FsaG9zdDo1MjI3IiwiYXVkIjoibG9jYWxob3N0OjUyMjcifQ.bVJB6V0vSSDX9n3ZU9bPgq5Bksk2oztuT41pQ7-Kp3c";
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZGVudGlmaWVyIjoiMGQwMWYwYWEtMDFlMy00Njg1LTlhMzEtZGNiZGJmYjJkNTYzIiwiUmVsIjoiMjAyMCIsIlNjaG9vbCI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwiZXhwIjoxNzE2OTc0Mjk4LCJpc3MiOiJsb2FsaG9zdDo1MjI3IiwiYXVkIjoibG9jYWxob3N0OjUyMjcifQ.EOLtnIK7l0eQcn2Ze5h3KbXEh8pQoW0heOSUu1iVfeI";
   return axios
     .request({
       method,

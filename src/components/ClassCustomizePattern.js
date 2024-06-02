@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import CountBox from "./CountBox";
 import {
   addOrUpdateCustomConstraints,
@@ -9,7 +9,6 @@ import { toPersianDigit } from "./toPersianDigit";
 
 const ClassCustomizePattern = ({ relId }) => {
   const [items, setItems] = useState([]);
-
   useEffect(() => {
     constraints(relId).then((res) => {
       if (res.isSuccess) {
@@ -48,13 +47,13 @@ const ClassCustomizePattern = ({ relId }) => {
     if (!selectedItem.percent) selectedItem.percent = 0;
        if (selectedItem.percent === 100 ) return;
 
-    if (selectedItem.percent - 5 === 0) {
+    if (selectedItem.percent === 0) {
       deleteConstraints(selectedItem.constraintGuid).then((res) => {
-        if (res.isSuccess) changeItemById(id, 0, null);
+        if (res.isSuccess) changeItemById(id, 0, res.data);
       });
       return;
     }
-    
+ 
     addOrUpdateCustomConstraints(id, relId, selectedItem.percent - 5).then(
       (res) => {
         if (res.isSuccess) {

@@ -576,7 +576,6 @@ input:focus {
   width: 100%;
   bottom: 0%;
   right: 0%;
-  padding-top: 10%;
 }
 .taklif {
   display: flex;
@@ -597,6 +596,7 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 5%;
 }
 .modal {
   display: flex;
@@ -647,4 +647,26 @@ input:focus {
   border-bottom: 1px solid #e2e1e1;
   margin: 1% 0% 1% 0%;
   padding-right: 1%;
+}
+
+.weekly {
+  width: 20%;
+  background-color: #fd6929;
+  font-size: 18px;
+  border: 1px solid #fd6929;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.btn {
+  width: 30%;
+  font-size: 16px;
+  border: 2px solid #1472ff;
+  border-radius: 7px;
+  background-color: white;
+}
+.select {
+  background-color: #1472ff;
+  color: white;
 }
